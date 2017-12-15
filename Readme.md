@@ -37,7 +37,12 @@ To view additional parameters (which may yield better document representations):
 
         $ python train.py --help
 
+## Extracting topic words
+To get topic words of 10 topic clusters:
+        
+        $ python get_topics.py --dataset <path to preprocessed dataset> --model <path to trained model directory>
 
+        
 ## Extracting document vectors and evaluating results
 
 To evaluate the retrieval results:
@@ -47,3 +52,4 @@ To evaluate the retrieval results:
 To extract document vectors (will be saved in NumPy text format to the model directory):
 
         $ python vectors.py --dataset <path to preprocessed dataset> --model <path to trained model directory>
+
