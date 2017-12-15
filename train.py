@@ -91,10 +91,11 @@ def train(model, dataset, params):
                     best_val or 0.0
                 ))
 
-                if val > best_val:
+                if val >= best_val:
                     best_val = val
                     print('saving: {}'.format(model_dir))
-                    saver.save(session, model_dir, global_step=step)
+                    save_path = saver.save(session, model_dir, global_step=step)
+                    print("Model saved in file: %s" % save_path)
 
                 summary, = session.run([summaries], feed_dict={
                     model.x: x,
